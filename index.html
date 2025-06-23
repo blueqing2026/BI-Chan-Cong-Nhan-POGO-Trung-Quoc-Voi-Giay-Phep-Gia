@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BI Chặn Công nhân POGO Trung Quốc Với Giấy phép Giả - Tin tức BI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f5f5f5;
+        }
+        .navbar {
+            background-color: #263238 !important; /* Màu tối hơn cho thanh điều hướng */
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+        }
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            color: #eceff1 !important; /* Màu chữ cho logo */
+        }
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .section-padding {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        .card {
+            margin-top: 20px;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+            border-radius: 8px;
+            overflow: hidden;
+            border: none;
+        }
+        .card-img-top {
+            border-radius: 8px 8px 0 0;
+            max-height: 350px;
+            object-fit: cover;
+            width: 100%;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .card-img-top:hover {
+            transform: scale(1.02);
+        }
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #3f51b5;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        .card-text {
+            line-height: 1.8;
+            color: #424242;
+        }
+        .badge-custom {
+            background-color: #e0e0e0;
+            color: #424242;
+            padding: .4em .6em;
+            border-radius: .25rem;
+            font-weight: 400;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        .news-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #757575;
+            font-size: 0.9em;
+        }
+        .news-meta span i {
+            margin-right: 5px;
+        }
+        .blockquote {
+            font-size: 1.15rem;
+            color: #424242;
+            border-left: 5px solid #3f51b5;
+            padding-left: 15px;
+            margin-left: 0;
+            font-style: italic;
+        }
+        .footer {
+            background-color: #263238;
+            color: #eceff1;
+            padding: 30px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: #eceff1;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #cfd8dc;
+        }
+
+        /* Scroll Top Button */
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1030;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        #scrollTopBtn:hover {
+            background-color: #303f9f;
+        }
+
+        /* Bootstrap Modal Customization */
+        .modal-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .modal-body {
+            padding: 0 !important;
+        }
+        .modal-body .caption {
+            padding: 15px;
+            font-style: italic;
+            color: #616161;
+            text-align: center;
+        }
+        .modal-header .btn-close {
+            filter: invert(1);
+        }
+
+        /* Comment Section Styles */
+        .comment-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+        }
+        .comment-section h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #3f51b5;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .comment-input-area {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .comment-input-area .form-control:focus {
+            border-color: #3f51b5;
+            box-shadow: 0 0 0 0.25rem rgba(63, 81, 181, 0.25);
+        }
+        .comment-input-area .btn-primary {
+            background-color: #3f51b5;
+            border-color: #3f51b5;
+        }
+        .comment-input-area .btn-primary:hover {
+            background-color: #303f9f;
+            border-color: #303f9f;
+        }
+
+        /* Comment List */
+        .comment-list .list-group-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 15px;
+            border-bottom: 1px solid rgba(0,0,0,.125);
+        }
+        .comment-list .list-group-item:last-child {
+            border-bottom: none;
+        }
+        .comment-list .avatar-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #bdbdbd;
+            color: white;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            flex-shrink: 0;
+            margin-right: 15px;
+        }
+        .comment-list .comment-body {
+            flex-grow: 1;
+        }
+        .comment-list .comment-title {
+            font-weight: 600;
+            color: #424242;
+            margin-bottom: 5px;
+        }
+        .comment-list .comment-text {
+            line-height: 1.5;
+            color: #616161;
+            margin-bottom: 0;
+        }
+        .comment-list .comment-date {
+            font-size: 0.8em;
+            color: #9e9e9e;
+            margin-top: 5px;
+            display: block;
+        }
+
+        /* Kiểu chung cho link bao ngoài - Đảm bảo hình tròn và hiệu ứng */
+.telegram-animated-link {
+    display: block; /* Quan trọng để áp dụng width/height và margin: auto */
+    width: 70px;    /* Kích thước cụ thể cho khu vực ảnh */
+    height: 70px;
+    margin: 15px auto 0 auto; /* Căn giữa ngang, 15px margin-top, 0 margin-right/bottom/left */
+    overflow: hidden; /* Đảm bảo hình ảnh không tràn ra khỏi hình tròn */
+    border-radius: 50%; /* **Làm cho khung link thành hình tròn** */
+    
+    /* Box-shadow ban đầu để tạo nền cho hiệu ứng phát sáng */
+    /* Giá trị ban đầu nên mờ hoặc không có để hiệu ứng pulse rõ hơn */
+    box-shadow: 0 0 5px rgba(0, 136, 204, 0.3); /* Bóng mờ nhẹ ban đầu */
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm transition cho box-shadow */
+    
+    /* Áp dụng animation cho nhấp nháy, phát sáng và chuyển động nhẹ */
+    animation: 
+        pulse-glow 2s infinite alternate, /* Hiệu ứng phát sáng */
+        bounce-subtle 3s infinite ease-in-out; /* Hiệu ứng chuyển động nhẹ */
+}
+
+/* Hiệu ứng hover cho link bao ngoài */
+.telegram-animated-link:hover {
+    transform: scale(1.1); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 0 30px 10px rgba(0, 136, 204, 0.9); /* Phát sáng mạnh hơn khi hover */
+}
+
+/* Kiểu cho hình ảnh bên trong - Quan trọng để ảnh cũng là hình tròn */
+.telegram-animated-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh vừa khung mà không bị méo */
+    border-radius: 50%; /* **Làm cho ảnh thành hình tròn** */
+    display: block; /* Đảm bảo ảnh là block để object-fit hoạt động tốt */
+}
+
+/* KEYFRAMES CHO HIỆU ỨNG - Giữ nguyên như đã có, hoặc điều chỉnh nếu muốn cường độ khác */
+
+/* Hiệu ứng phát sáng và nhấp nháy (pulse-glow) */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 136, 204, 0.3); /* Mức sáng ban đầu */
+    }
+    50% {
+        box-shadow: 0 0 25px 8px rgba(0, 136, 204, 0.8), /* Phát sáng mạnh hơn */
+                    0 0 40px 15px rgba(0, 136, 204, 0.6); /* Lớp sáng ngoài */
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 136, 204, 0.3); /* Trở về trạng thái ban đầu */
+    }
+}
+
+/* Hiệu ứng chuyển động nhẹ (bounce-subtle) */
+@keyframes bounce-subtle {
+    0%, 100% {
+        transform: translateY(0); /* Vị trí ban đầu */
+    }
+    25% {
+        transform: translateY(-5px); /* Nhấc nhẹ lên */
+    }
+    75% {
+        transform: translateY(5px); /* Hạ nhẹ xuống */
+    }
+}
+
+/* (Các kiểu cho .contact.section và .custom-telegram-btn vẫn giữ nguyên như trước) */
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="..\Bi-logo.png" alt="BI Logo">
+                Tin tức Cục Di trú Philippines
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Về chúng tôi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container section-padding">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <div class="card">
+                    <img src="Chinese-POGO-workers-intercepted-for-presenting-fake-clearance.webp"
+                         class="card-img-top"
+                         alt="Công nhân POGO bị chặn tại NAIA"
+                         data-bs-toggle="modal"
+                         data-bs-target="#imageModal"
+                         data-caption="Hai công dân Trung Quốc bị chặn tại NAIA vì sử dụng giấy phép giả.">
+
+                <div class="contact section text-center shadow-lg p-4 my-4" id="lien-he">
+                    <h3 class="mb-3" data-i18n="contact-telegram-heading"><strong>Liên hệ Tìm Việc Làm </strong></h3>
+                    <a href="https://t.me/Lu98899" target="_blank" class="btn btn-primary btn-lg custom-telegram-btn mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-telegram me-2" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.421-2.28 1.18-.573.389-1.18.844-.925.724-1.786 1.434-.118.097-.24.195a.5.5 0 0 0-.154.557c.074.254.34.364.654.249l1.799-.819c.35-.153.723-.186 1.07-.099l.346.076c.46.103.657.6.445 1.013-.07.16-.382.321-.8.51-.66.3-1.348.529-2.058.654-.1.015-.195.034-.29.052a.5.5 0 0 0-.416.592c.07.3.38.453.67.31L8.002 8.35q1.123-.5 2.066-1.054c.41-.233.785-.502 1.15-.777l2.275-1.536c.264-.178.356-.445.242-.716-.16-.337-.52-.52-.891-.393z"/>
+                        </svg>
+                        <span data-i18n="contact-telegram-button">Nhắn tin Telegram</span>
+                    </a>
+                    
+                    <a href="https://t.me/Lu98899" target="_blank" class="d-block mx-auto telegram-animated-link">
+                        <img src="../hinhanh_telegram_2.jpeg" alt="Telegram liên hệ" class="telegram-animated-icon img-fluid">
+                    </a>
+                </div>
+
+
+
+
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <span class="badge-custom">Tin tức An ninh</span>
+                            <span class="badge-custom">Di trú</span>
+                            <span class="badge-custom">POGO</span>
+                        </div>
+                        <h4 class="card-title text-primary">Công nhân POGO Trung Quốc bị chặn vì xuất trình giấy phép giả —BI</h4>
+                        <div class="news-meta">
+                            <span><i class="bi bi-clock me-1"></i> Ngày 20 tháng 6, 2025</span>
+                            <span><i class="bi bi-eye me-1"></i> 1.2K lượt xem</span>
+                            <span><i class="bi bi-people me-1"></i> 300 người theo dõi</span>
+                            <span id="commentCountSpan"><i class="bi bi-chat-dots me-1"></i> 50 bình luận</span>
+                        </div>
+                        <hr class="mb-4">
+                        <p class="card-text lead">PASAY CITY, Philippines—Theo chiến dịch tăng cường chống lại các hoạt động cờ bạc ngoài khơi bất hợp pháp và việc sử dụng các tài liệu gian lận của Tổng thống <span class="fw-bold text-success text-decoration-underline">Ferdinand R. Marcos Jr.</span>, Cục Di trú (BI) đã chặn hai công dân Trung Quốc đang cố gắng rời khỏi đất nước bằng <span class="fst-italic text-primary">giấy phép xuất cảnh giả (ECC)</span> tại Nhà ga 3, Sân bay quốc tế Ninoy Aquino (NAIA).</p>
+                        <p class="card-text">Vụ chặn bắt xảy ra vào <span class="fw-bold text-warning">ngày 20 tháng 6</span> tại khu vực khởi hành, khi hành khách đang cố gắng lên chuyến bay của Cathay Pacific đến Hồng Kông.</p>
+                        <p class="card-text"><span class="fw-bold text-info">Những người bị chặn lại là Yu Ziming, 32 tuổi và Wu Liping, 30 tuổi</span>, những người bị các thành viên của Ban Bảo vệ Di trú và Thực thi Biên giới (I-PROBES) của Cục lưu trú phát hiện vì <span class="fst-italic text-danger">xuất trình ECC giả mạo</span>.</p>
+                        <p class="card-text">ECC là yêu cầu đối với công dân nước ngoài đang làm việc tại Philippines và có ý định rời khỏi đất nước này vĩnh viễn.</p>
+                        <p class="card-text">Cuộc điều tra ban đầu cho thấy cả hai cá nhân này trước đây từng làm việc cho các công ty điều hành trò chơi ngoài khơi Philippines (<span class="fw-bold text-primary text-decoration-underline">POGO</span>), vốn đang chịu sự giám sát chặt chẽ của chính phủ sau <span class="fst-italic text-success">lệnh cấm POGO của nước này</span>.</p>
+                        <p class="card-text">Hai người này đã được chuyển đến <span class="fw-bold text-info">Bộ phận pháp lý BI</span> để nộp các cáo buộc nhập cư phù hợp. Sau đó, họ đã được chuyển đến Cơ sở quản giáo của Cục, nơi họ sẽ ở lại chờ thủ tục trục xuất.</p>
+                        <p class="card-text">Ủy viên BI <span class="fw-bold text-warning">Joel Anthony Viado</span> nhấn mạnh cam kết của BI trong việc phát hiện các âm mưu gian lận và ngăn chặn lao động nước ngoài bất hợp pháp trốn tránh trách nhiệm pháp lý.</p>
+                        <blockquote class="blockquote">
+                            <p class="mb-0">“Hãy để đây là lời cảnh báo cho những người cố gắng lách luật nhập cư thông qua các tài liệu giả. Chúng tôi sẽ tiếp tục loại bỏ gian lận và duy trì sự toàn vẹn của biên giới của chúng tôi,” ông Viado nói. “Chúng tôi hoàn toàn ủng hộ chỉ thị của Tổng thống nhằm xóa bỏ các hoạt động POGO bất hợp pháp và đảm bảo rằng hệ thống nhập cư của chúng tôi không bị các thành phần tội phạm lợi dụng”, ông nói thêm.</p>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="comment-section">
+                    <h5 id="commentSectionTitle">Bình luận (50)</h5>
+
+                    <div class="comment-input-area">
+                        <div class="mb-3">
+                            <label for="comment_username" class="form-label">Tên của bạn (Tùy chọn)</label>
+                            <input type="text" class="form-control" id="comment_username" placeholder="Nhập tên của bạn">
+                        </div>
+                        <div class="mb-3">
+                            <label for="comment_content" class="form-label">Viết bình luận của bạn...</label>
+                            <textarea class="form-control" id="comment_content" rows="3"></textarea>
+                        </div>
+                        <button id="submitCommentBtn" class="btn btn-primary float-end">Gửi bình luận
+                            <i class="bi bi-send ms-2"></i>
+                        </button>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <ul id="commentList" class="list-group list-group-flush comment-list">
+                        </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Chi tiết hình ảnh</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="Hình ảnh lớn" class="img-fluid">
+                    <p class="caption" id="modalCaption"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="scrollTopBtn" type="button" class="btn"><i class="bi bi-arrow-up"></i></button>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5 class="text-white">Về Tin tức Cục Di trú Philippines</h5>
+                    <p class="text-light">Cung cấp tin tức và thông tin cập nhật về các hoạt động của Cục Di trú Philippines.</p>
+                </div>
+                <div class="col-md-4 offset-md-2">
+                    <h5 class="text-white">Liên kết nhanh</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-light">Trang chủ</a></li>
+                        <li><a href="#about" class="text-light">Về chúng tôi</a></li>
+                        <li><a href="#contact" class="text-light">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="text-light">
+            <div class="row">
+                <div class="col-12 text-center">
+                    © 2025 Tin tức Cục Di trú Philippines. Tất cả quyền được bảo lưu.
+                    <a class="text-light ms-3" href="#!">Chính sách bảo mật</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcOdihR7AXmU+4jQ2OqF+Kz5oV5L" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Xử lý Modal hình ảnh với Bootstrap
+            const imageModal = document.getElementById('imageModal');
+            if (imageModal) {
+                imageModal.addEventListener('show.bs.modal', event => {
+                    const button = event.relatedTarget;
+                    const imageUrl = button.getAttribute('src');
+                    const imageCaption = button.getAttribute('data-caption');
+
+                    const modalImage = imageModal.querySelector('#modalImage');
+                    const modalCaption = imageModal.querySelector('#modalCaption');
+                    const modalTitle = imageModal.querySelector('.modal-title');
+
+                    modalImage.src = imageUrl;
+                    modalCaption.textContent = imageCaption || 'Hình ảnh chi tiết.';
+                    modalTitle.textContent = button.getAttribute('alt') || 'Chi tiết hình ảnh';
+                });
+            }
+
+            // Hiển thị/ẩn nút cuộn lên đầu trang
+            var scrollTopBtn = document.getElementById("scrollTopBtn");
+            window.onscroll = function() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    scrollTopBtn.style.display = "flex";
+                } else {
+                    scrollTopBtn.style.display = "none";
+                }
+            };
+            scrollTopBtn.addEventListener('click', function() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            });
+
+            // --- Chức năng gửi bình luận với Local Storage ---
+
+            var submitCommentBtn = document.getElementById('submitCommentBtn');
+            var commentUsernameInput = document.getElementById('comment_username');
+            var commentContentInput = document.getElementById('comment_content');
+            var commentList = document.getElementById('commentList');
+            var commentCountSpan = document.getElementById('commentCountSpan');
+            var commentSectionTitle = document.getElementById('commentSectionTitle');
+
+            let comments = [];
+
+            function createCommentElement(comment) {
+                var newCommentItem = document.createElement('li');
+                newCommentItem.className = 'list-group-item comment-item';
+
+                var initial = comment.username ? comment.username.substring(0, 1).toUpperCase() : 'ẨD';
+
+                newCommentItem.innerHTML = `
+                    <div class="avatar-circle">${initial}</div>
+                    <div class="comment-body">
+                        <span class="comment-title">${comment.username || 'Ẩn Danh'}</span>
+                        <p class="comment-text">${comment.content}</p>
+                        <span class="comment-date">${comment.timestamp}</span>
+                    </div>
+                `;
+                return newCommentItem;
+            }
+
+            function displayComments() {
+                commentList.innerHTML = '';
+                comments.forEach(comment => {
+                    commentList.prepend(createCommentElement(comment));
+                });
+                commentCountSpan.innerHTML = `<i class="bi bi-chat-dots me-1"></i> ${comments.length} bình luận`;
+                commentSectionTitle.textContent = `Bình luận (${comments.length})`;
+            }
+
+            function loadComments() {
+                const storedComments = localStorage.getItem('blogComments');
+                if (storedComments) {
+                    comments = JSON.parse(storedComments);
+                } else {
+                    // Nếu chưa có bình luận nào trong Local Storage, khởi tạo với các bình luận mẫu
+                    comments = [
+                        { username: 'Dân ', content: "Thật tốt khi BI hành động cứng rắn với POGO bất hợp pháp. Cần nhiều hơn nữa!", timestamp: 'Vài phút trước' },
+                        { username: 'Công Tâm', content: "Ủng hộ BI! Giữ vững biên giới, không dung thứ gian lận nhập cư.", timestamp: '1 giờ trước' },
+                        { username: 'Tư', content: "Cuối cùng cũng có hành động mạnh mẽ chống lại hoạt động POGO mờ ám.", timestamp: '2 giờ trước' },
+                        { username: 'Mai', content: "Hy vọng việc này sẽ giảm bớt tội phạm liên quan đến POGO. Cảm ơn BI!", timestamp: '3 giờ trước' },
+                        { username: 'Đức Quang', content: "Cần tiếp tục siết chặt kiểm soát, bảo vệ luật pháp Philippines.", timestamp: 'Hôm qua' },
+                        { username: 'Văn Hào', content: "Quyết định cấm POGO của Tổng thống Marcos Jr. là hoàn toàn đúng đắn.", timestamp: 'Hôm qua' },
+                        { username: 'Trung Thực', content: "Đây là lời cảnh báo rõ ràng cho bất kỳ ai có ý định vi phạm luật.", timestamp: '2 ngày trước' },
+                        { username: 'An Nhiên', content: "An ninh quốc gia được ưu tiên. BI đang làm rất tốt công việc của mình.", timestamp: '3 ngày trước' },
+                        { username: 'Trí Lực', content: "Mong các cơ quan khác cũng làm việc hiệu quả như BI trong vấn đề này.", timestamp: '4 ngày trước' },
+                        { username: 'Quốc Luân', content: "Philippines phải được bảo vệ khỏi những người lạm dụng hệ thống nhập cư.", timestamp: '5 ngày trước' },
+                    ];
+                }
+                displayComments();
+            }
+
+            function formatTimeAgo(date) {
+                const seconds = Math.floor((new Date() - new Date(date)) / 1000); // Changed to use new Date(date) for consistency if rawTimestamp is used later
+
+                let interval = seconds / 31536000;
+                if (interval > 1) return Math.floor(interval) + " năm trước";
+                interval = seconds / 2592000;
+                if (interval > 1) return Math.floor(interval) + " tháng trước";
+                interval = seconds / 86400;
+                if (interval > 1) return Math.floor(interval) + " ngày trước";
+                interval = seconds / 3600;
+                if (interval > 1) return Math.floor(interval) + " giờ trước";
+                interval = seconds / 60;
+                if (interval > 1) return Math.floor(interval) + " phút trước";
+                return "Vài giây trước";
+            }
+
+            submitCommentBtn.addEventListener('click', function() {
+                var username = commentUsernameInput.value.trim();
+                var content = commentContentInput.value.trim();
+
+                if (content) {
+                    const newComment = {
+                        username: username || 'Ẩn Danh',
+                        content: content,
+                        timestamp: formatTimeAgo(new Date()),
+                        rawTimestamp: new Date().toISOString()
+                    };
+
+                    comments.unshift(newComment); // Thêm bình luận mới lên đầu
+                    saveComments();
+                    displayComments();
+
+                    commentUsernameInput.value = '';
+                    commentContentInput.value = '';
+
+                    const toastLiveExample = document.getElementById('liveToast');
+                    const toastBody = document.getElementById('toastBody');
+                    if(toastBody) toastBody.textContent = 'Bình luận của bạn đã được gửi!';
+                    const toast = new bootstrap.Toast(toastLiveExample);
+                    toast.show();
+
+                } else {
+                    const toastLiveExample = document.getElementById('liveToast');
+                    const toastBody = document.getElementById('toastBody');
+                    if(toastBody) toastBody.textContent = 'Vui lòng nhập nội dung bình luận!';
+                    const toast = new bootstrap.Toast(toastLiveExample);
+                    toast.show();
+                }
+            });
+
+            // Re-format timestamps on load in case they were stored as ISO strings
+            comments.forEach(comment => {
+                if (comment.rawTimestamp) {
+                    comment.timestamp = formatTimeAgo(comment.rawTimestamp);
+                }
+            });
+
+            loadComments(); // Load and display comments when the page loads
+        });
+    </script>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast text-bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Thông báo</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toastBody">
+                </div>
+        </div>
+    </div>
+</body>
+</html>
